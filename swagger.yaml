@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: API Framework
+  version: "4.0"
+paths:
+  /user:
+    get:
+      operationId: get user
+      parameters:
+        - in: query
+          name: surname
+          schema:
+            type: string
+          description: The surname of the user to be returned
+      responses:
+        200:
+          description: Created Power Embed Token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfoResponse'
+        default:
+          description: Any error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      required:
+        - status
+        - reason
+      type: object
+      properties:
+        status:
+          type: integer
+          minimum: 100
+          maximum: 599
+        reason:
+          type: string
+    UserInfoResponse:
+      required:
+        - userinfos
+      type: object
+      properties:
+        userinfos:
+          type: array
+          items:
+            type: UserInfo
+    UserInfo:
+      required:
+        - firstname
+        - surname
+        - email
+      type: object
+      properties:
+        firstname:
+          type: string
+        surname:
+          type: string
+        email:
+          type: string
+    UserInfoRequest:
+      required:
+        - surname
+      type: object
+      properties:
+        surname:
+          type: string
