@@ -61,10 +61,3 @@ components:
           type: string
         email:
           type: string
-    UserInfoRequest:
-      required:
-        - surname
-      type: object
-      properties:
-        surname:
-          type: string

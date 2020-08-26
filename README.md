@@ -7,8 +7,8 @@ A simple spring-boot application serving a "user" endpoint, returning data via J
 * The in-memory h2 DB is populated on startup (see `src/main/resources/data.sql`)
 
 ### Build and Start
-`mvn clean compile` to build and generate sources
-`mvn spring-boot:run` to start application on 'http://localhost:8080'
+* `mvn clean compile` to build and generate sources
+* `mvn spring-boot:run` to start application on 'http://localhost:8080/'
 
 ### Endpoints
 
